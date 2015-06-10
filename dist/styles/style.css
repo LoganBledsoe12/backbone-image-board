@@ -1,0 +1,62 @@
+body{
+	width:100%;
+	height:100%;
+	background-color:rgb(162,162,162);
+}
+#headerboard{
+	height:50px;
+	width:100%;
+	background-color: rgb(67,94,133);
+}
+#btnaddphoto{
+	width:120px;
+	height:35px;
+	margin-top:7px;
+	margin-left:45px;
+	background-color: rgb(12,26,42);
+	color: rgb(67,94,133);
+}
+.picturecaption{
+	background-color:black;
+	color:white;
+	height:40px;
+	width:100%;
+	text-align:center;
+	font-family:"Impact";
+	padding-top:10px;
+	margin-top:7px;
+	
+}
+.colum{
+	width:20%;
+	display:inline-block;
+}
+.picture{
+	width:100%;
+}
+.colummiddle{
+	width:60%;
+	display:inline-block;
+}
+#imageurl{
+	width:400px;
+	height:40px;
+	display:block;
+
+}
+#imagecaption{
+	width:400px;
+	height:40px;
+	display:block;
+
+}
+#btncancel{
+	width:100px;
+	height:30px;
+
+}
+#btnaddimage{
+	width:100px;
+	height:30px;
+
+}

@@ -1,0 +1,19 @@
+{
+  "name": "dist",
+  "version": "0.0.0",
+  "authors": [
+    "Logan Bledsoe <lbledsoe12@hotmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.2.1",
+    "jquery": "~2.1.4"
+  }
+}
