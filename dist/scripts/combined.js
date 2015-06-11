@@ -1,6 +1,7 @@
-var $ = require('jquery');
-var Backbone = require('backbone');
-Backbone.$ = $;
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+//  var $ = require('jquery');
+// var Backbone = require('backbone');
+// Backbone.$ = $;
 
 $(document).ready(function() {
 
@@ -41,7 +42,26 @@ $(document).ready(function() {
         $('#imagecaption').val('');
                                         
     });
+    $('body').on ('keypress','input', function(e){
+        if (e.which == 13){
+            var picId = $(e.target).attr('pictureId');
+            var comment = $(e.target).val();
+            var picture = ImageList.get(picId);
+            console.log (picture);
+            var comments =(picture.get('comments'));
+            if (comments==null){
+                comments=new CommentCollection()
+                comments.on('add', function(model){
+                    $('#'+picId).append(model.get('text')+'<br>');
+                })
+                picture.set('comments',comments);
+            }
+            comments.add({text:comment});
+            picture.save();
 
+
+        }
+    })
 
     
     ImageList.on('add', function(model) {
@@ -56,3 +76,5 @@ $(document).ready(function() {
 });
 var addimageform = $('#addimageform');
 var btnaddphoto = $('btnaddphoto');
+
+},{}]},{},[1]);

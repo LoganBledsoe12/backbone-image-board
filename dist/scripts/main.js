@@ -1,6 +1,6 @@
-var $ = require('jquery');
-var Backbone = require('backbone');
-Backbone.$ = $;
+//  var $ = require('jquery');
+// var Backbone = require('backbone');
+// Backbone.$ = $;
 
 $(document).ready(function() {
 
@@ -41,7 +41,26 @@ $(document).ready(function() {
         $('#imagecaption').val('');
                                         
     });
+    $('body').on ('keypress','input', function(e){
+        if (e.which == 13){
+            var picId = $(e.target).attr('pictureId');
+            var comment = $(e.target).val();
+            var picture = ImageList.get(picId);
+            console.log (picture);
+            var comments =(picture.get('comments'));
+            if (comments==null){
+                comments=new CommentCollection()
+                comments.on('add', function(model){
+                    $('#'+picId).append(model.get('text')+'<br>');
+                })
+                picture.set('comments',comments);
+            }
+            comments.add({text:comment});
+            picture.save();
 
+
+        }
+    })
 
     
     ImageList.on('add', function(model) {

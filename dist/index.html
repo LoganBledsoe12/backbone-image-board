@@ -21,9 +21,12 @@
 	<div class="colum"></div>
 	<div class="colummiddle" id="picturecontainer"></div>
 	<div class="colum"></div>
+	
 	<script type="text/template" id="list-template">
 		<img class="picture" src="<%=url%>"></img>
-		<div class="picturecaption"><%=caption%></div>	
+		<div class="picturecaption"><%=caption%></div>
+		<div id="<%=_id%>"></div>
+		<input pictureId="<%=_id%>" placeholder="Add a comment..."></input>	
 	</script>
  
 
@@ -32,14 +35,17 @@
 
 
 
+<!-- 
+<script type="text/javascript" src="scripts/combined.js"></script> -->
 
 
-
- <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
-    <script type="text/javascript" src="bower_components/backbone/backbone-min.js"></script>
-    <script type="text/javascript" src="scripts/models/image-model.js"></script>
-    <script type="text/javascript" src="scripts/collections/image-collection.js"></script>
-    <script type="text/javascript" src="scripts/models/main.js"></script>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+   <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+   <script type="text/javascript" src="bower_components/backbone/backbone-min.js"></script>
+   <script type="text/javascript" src="scripts/models/image-model.js"></script>
+   <script type="text/javascript" src="scripts/collections/image-collection.js"></script>
+   <script type="text/javascript" src="scripts/main.js"></script>
+   <script type="text/javascript" src="scripts/models/comments.js"></script>
+   <script type="text/javascript" src="scripts/collections/CommentCollection.js"></script>
 </body>
 </html>
